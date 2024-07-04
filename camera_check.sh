@@ -8,7 +8,7 @@ docker run -it --rm \
 --privileged \
 -v /dev:/dev \
 -v $(pwd)/outputs:/out/ \
-- v /var/run/docker.sock:/var/run/docker.sock \
+-v /var/run/docker.sock:/var/run/docker.sock \
 --device-cgroup-rule "c 81:* rmw" \
 --device-cgroup-rule "c 189:* rmw" \
 bipedrobotics/camera_tools:latest
