@@ -7,4 +7,5 @@ alias camera_fw_update="python $ASSEMBLY_TOOL_DIR/fw_update.py"
 
 alias assembly_tool_update="cd $ASSEMBLY_TOOL_DIR && ./update.sh"
 alias assembly_tool_version="cd $ASSEMBLY_TOOL_DIR && git rev-list HEAD -1"
+
 alias assembly_tool_help="batcat $ASSEMBLY_TOOL_DIR/README.md"
