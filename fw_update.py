@@ -19,10 +19,10 @@ class FWDevice(NamedTuple):
 
 class FirmwareUpdater:  # noqa: D101
     path = "rs-fw-update"
-    path_export = "./exports"
 
-    def __init__(self) -> None:  # noqa: D107
-        self.devices = self.get_devices()
+    @cached_property
+    def devices(self) -> List[FWDevice]:
+        return self._get_devices()
 
     @cached_property
     def fw_updater_version(self) -> str:
@@ -73,7 +73,7 @@ class FirmwareUpdater:  # noqa: D101
             is_recovery="Recovery" in line,
         )
 
-    def get_devices(self) -> List[FWDevice]:  # noqa: D102
+    def _get_devices(self) -> List[FWDevice]:  # noqa: D102
         params = [FirmwareUpdater.path, "-l"]
         res = subprocess.check_output(params)
         devices = []
