@@ -6,8 +6,7 @@ from typing import NamedTuple, Optional, List
 
 FW_TOOL_VERSION_TO_REGEX = {
     "2.55.1.0": r"[0-9]+\) \[USB\] Intel RealSense (.+?) s/n (\d+), update serial number: (\d+), firmware version: ([\d.]+)",
-    "default": r"[0-9]+\) Name: (.*?), serial number: (.*?),"
-    r"update serial number: ([0-9]+), firmware version: (.*?), USB type: (.*?)",
+    "default": r"[0-9]+\) Name: (.*?), serial number: (.*?), update serial number: ([0-9]+), firmware version: (.*?), USB type: (.*?)",
 }
 
 
@@ -133,7 +132,7 @@ def update_firmware(
     devices = firmware_updater.devices
     console.print(f"Will update {devices} - DO NOT DISCONNECT THE CAMERAS!")
     for device in devices:
-        if device.firmware_version == "5.15.1":
+        if device.firmware_version in ("5.15.1", "05.15.01.00"):
             console.print(
                 f"Device {device.serial_number} is already up to date {device.firmware_version} [green]:heavy_check_mark: [/green]"
             )
