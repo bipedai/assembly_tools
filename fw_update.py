@@ -132,7 +132,7 @@ def update_firmware(
     devices = firmware_updater.devices
     console.print(f"Will update {devices} - DO NOT DISCONNECT THE CAMERAS!")
     for device in devices:
-        if device.firmware_version in ("5.15.1", "5.15.01.00"):
+        if device.firmware_version in ("5.15.1", "05.15.01.00"):
             console.print(
                 f"Device {device.serial_number} is already up to date {device.firmware_version} [green]:heavy_check_mark: [/green]"
             )
