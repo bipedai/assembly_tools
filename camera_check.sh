@@ -3,7 +3,6 @@
 # By using --device-cgroup-rule flag we grant the docker continer permissions -
 # to the camera and usb endpoints of the machine.
 # It also mounts the /dev directory of the host platform on the contianer
-docker pull bipedrobotics/camera_tools:latest
 docker run -it --rm \
 --privileged \
 -v /dev:/dev \
