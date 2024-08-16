@@ -1,5 +1,6 @@
 alias camera_check="source ./camera_check.sh"
-alias update="source ./update.sh"
 alias camera_fw_update="python ./fw_update.py"
 
-alias assembly_tools_help="batcat README.md"
+alias assembly_tool_update="source ./update.sh"
+alias assembly_tool_version="git rev-list HEAD -1"
+alias assembly_tool_help="batcat README.md"
