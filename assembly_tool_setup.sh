@@ -4,7 +4,8 @@ ASSEMBLY_TOOL_DIR=$(dirname "$(realpath $0)")
 echo "Setting up $ASSEMBLY_TOOL_DIR"
 printf "Commands:
     camera_check: Checks that the connected camera(s) work and are correctly assembled
-    camera_fw_update: Update the camera firmware. Do not interrupt or disconnect the camera(s) while the update is in progress
+    camera_fw_update: Update the camera firmware. Do not interrupt or disconnect the camera(s) while the update is in progress.
+    camera_calibrate: Calibrate the camera module. See 
 
     assembly_qc: Launches  the visualization for the final quality check once the full device is assembled and flashed
 
@@ -14,6 +15,7 @@ printf "Commands:
     assembly_tool_help: Show the help for the assembly tool"
 alias camera_check="source $ASSEMBLY_TOOL_DIR/camera_check.sh"
 alias camera_fw_update="python $ASSEMBLY_TOOL_DIR/fw_update.py"
+alias camera_calibrate="source $ASSEMBLY_TOOL_DIR/camera_calibrate.sh"
 
 alias assembly_tool_update="cd $ASSEMBLY_TOOL_DIR && ./update.sh"
 alias assembly_tool_version="cd $ASSEMBLY_TOOL_DIR && git rev-list HEAD -1"

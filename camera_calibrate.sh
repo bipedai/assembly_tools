@@ -4,12 +4,12 @@
 # to the camera and usb endpoints of the machine.
 # It also mounts the /dev directory of the host platform on the contianer
 # Mount the docker since calibration script contains docker commands
-docker pull bipedrobotics/camera_calibrate:latest
+
 docker run -it --rm \
---privileged \
--v /dev:/dev \
--v $(pwd)/outputs:/out/ \
--v /var/run/docker.sock:/var/run/docker.sock \
---device-cgroup-rule "c 81:* rmw" \
---device-cgroup-rule "c 189:* rmw" \
-bipedrobotics/camera_calibrate:latest
+    --privileged \
+    -v /dev:/dev \
+    -v $(pwd)/outputs:/out/ \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    --device-cgroup-rule "c 81:* rmw" \
+    --device-cgroup-rule "c 189:* rmw" \
+    bipedrobotics/camera_calibration:latest
