@@ -109,27 +109,26 @@ class FirmwareUpdater:  # noqa: D101
         return True
 
 
-def update_firmware(
-    filename: str, firmware_updater: Optional[FirmwareUpdater] = None
-) -> None:
+def update_firmware(file_path: Path) -> None:
     """Updates the firmware of the connected cameras from the provided binary file.
 
     Args:
-        filename (str): Name of the binary file containing the realsense update.
-        firmware_updater (Optional[FirmwareUpdater], optional): _description_. Defaults to None.
+        file_path (Path): Path to the binary file containing the realsense update.
 
     Raises:
-        FileNotFoundError: _description_
+        FileNotFoundError: If the firmware binary file is not found.
     """
     from rich.console import Console
 
     console = Console()
 
     firmware_updater = FirmwareUpdater()
-    file_path = Path(filename)
     if not file_path.exists() and file_path.is_file:
         raise FileNotFoundError(file_path.resolve())
     devices = firmware_updater.devices
+    if len(devices) == 0:
+        console.print("No devices found [red]:heavy_multiplication_x: [/red]")
+        return
     console.print(f"Will update {devices} - DO NOT DISCONNECT THE CAMERAS!")
     for device in devices:
         if device.firmware_version in ("5.15.1", "05.15.01.00"):
@@ -150,4 +149,4 @@ def update_firmware(
 
 
 if __name__ == "__main__":
-    update_firmware("Signed_Image_UVC_5_15_1_0.bin")
+    update_firmware(Path(__file__).parent / "Signed_Image_UVC_5_15_1_0.bin")
