@@ -149,4 +149,4 @@ def update_firmware(file_path: Path) -> None:
 
 
 if __name__ == "__main__":
-    update_firmware(Path(__file__).parent / "Signed_Image_UVC_5_15_1_0.bin")
+    update_firmware(Path(__file__).parent / "assets" / "Signed_Image_UVC_5_15_1_0.bin")

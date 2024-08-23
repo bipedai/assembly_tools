@@ -1,10 +1,12 @@
 #!/bin/bash
 set -eu
-COPILOT_REPO="/home/paul/biped/repos/copilot"
-OBJ="charuco_7x10_id0.json"
+ASSEMBLY_TOOL_DIR=$(dirname "$(realpath $0)")
+OBJ="charuco_7x10_id0-id500.json"
 
 CALIB_UUID=$(cat /proc/sys/kernel/random/uuid | sed 's/[-]//g' | head -c 8)
 CALIBRATION_FOLDER="/tmp/$CALIB_UUID"
+
+# Update the permissions of the calibration folder to the current user
 mkdir -p $CALIBRATION_FOLDER
 chown $(id -u):$(id -g) $CALIBRATION_FOLDER
 
@@ -37,7 +39,7 @@ metrical() {
 camera_tools --mode calibrate -o /out/$CALIB_UUID
 
 
-cp $COPILOT_REPO/scripts/constants/$OBJ $CALIBRATION_FOLDER
+cp $ASSEMBLY_TOOL_DIR/assets/$OBJ $CALIBRATION_FOLDER
 _INIT_PLEX_FILE="tmp_plex.json"
 _UMBRA_OUTPUT="umbra_$CALIB_UUID.json"
 
