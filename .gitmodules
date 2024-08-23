@@ -1,0 +1,3 @@
+[submodule "flash_tool"]
+	path = flash_tool
+	url = git@github.com:khadas/utils.git
