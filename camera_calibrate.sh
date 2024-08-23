@@ -1,4 +1,4 @@
-#!/bin/bash
+¨#!/bin/bash
 set -eu
 ASSEMBLY_TOOL_DIR=$(dirname "$(realpath $0)")
 OBJ="charuco_7x10_id0-id500.json"
@@ -17,7 +17,6 @@ camera_tools()
     --privileged \
     -v /dev:/dev \
     -v $CALIBRATION_FOLDER:/out/ \
-    -v /var/run/docker.sock:/var/run/docker.sock \
     --device-cgroup-rule "c 81:* rmw" \
     --device-cgroup-rule "c 189:* rmw" \
     camera_tools:latest \
