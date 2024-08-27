@@ -19,7 +19,7 @@ camera_tools()
     -v $CALIBRATION_FOLDER:/out/ \
     --device-cgroup-rule "c 81:* rmw" \
     --device-cgroup-rule "c 189:* rmw" \
-    camera_tools:latest \
+    bipedrobotics/camera_tools:latest \
     -- "$@";
 }
 
