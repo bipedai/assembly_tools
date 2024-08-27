@@ -29,11 +29,11 @@ printf "Commands:
     assembly_tool_help : Show the help for the assembly tool"
 
 
-alias camera_check="source $ASSEMBLY_TOOL_DIR/camera_check.sh"
+alias camera_check="bash $ASSEMBLY_TOOL_DIR/camera_check.sh"
 alias camera_fw_update="python $ASSEMBLY_TOOL_DIR/fw_update.py"
-alias camera_calibrate="source $ASSEMBLY_TOOL_DIR/camera_calibrate.sh"
+alias camera_calibrate="bash $ASSEMBLY_TOOL_DIR/camera_calibrate.sh"
 
-alias board_flash="source $ASSEMBLY_TOOL_DIR/flash_board.sh"
+alias board_flash="bash $ASSEMBLY_TOOL_DIR/flash_board.sh"
 
 alias assembly_tool_update="cd $ASSEMBLY_TOOL_DIR && ./update.sh"
 alias assembly_tool_version="cd $ASSEMBLY_TOOL_DIR && git rev-list HEAD -1"
