@@ -1,4 +1,4 @@
-¨#!/bin/bash
+#!/bin/bash
 set -eu
 ASSEMBLY_TOOL_DIR=$(dirname "$(realpath $0)")
 OBJ="charuco_7x10_id0-id500.json"
