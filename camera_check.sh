@@ -8,7 +8,6 @@ camera_tools()
     docker run -it --rm --user="$(id -u):$(id -g)"\
     --privileged \
     -v /dev:/dev \
-    -v $CALIBRATION_FOLDER:/out/ \
     --device-cgroup-rule "c 81:* rmw" \
     --device-cgroup-rule "c 189:* rmw" \
     bipedrobotics/camera_tools:latest \
