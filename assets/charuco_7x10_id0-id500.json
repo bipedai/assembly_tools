@@ -1,0 +1,34 @@
+{
+  "object_spaces": {
+      "24e6df7b-b756-4b9c-a719-660d45d796bf": {
+          "descriptor": {
+              "variances": [0.00004, 0.00004, 0.0004]
+          },
+          "detector": {
+            "markerboard": {
+              "checker_length": 0.05,
+              "corner_height": 7,
+              "corner_width": 10,
+              "marker_dictionary": "Aruco4x4_1000",
+              "marker_id_offset": 0,
+              "marker_length": 0.037
+            }
+      }
+    },
+      "7324938d-de4e-4d36-a25b-fbd8e6102026": {
+          "descriptor": {
+              "variances": [0.00004, 0.00004, 0.0004]
+          },
+          "detector": {
+            "markerboard": {
+                "checker_length": 0.05,
+                "corner_height": 7,
+                "corner_width": 10,
+                "marker_dictionary": "Aruco4x4_1000",
+                "marker_id_offset": 500,
+                "marker_length": 0.037
+              }
+          }
+      }
+}
+}
