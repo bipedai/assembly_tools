@@ -9,9 +9,9 @@ if [ ! -f "$ASSEMBLY_TOOL_DIR/flash_tool/rk-flash-tool/.is_installed" ]; then
 fi
 FLASHER=$ASSEMBLY_TOOL_DIR/flash_tool/rk-flash-tool/rk-burn-tool
 # Check if the md5sum of the local image matches what is expected
-LOCAL_IMAGE=$ASSEMBLY_TOOL_DIR/assets/*-emmc.img.xz
-if [ -f "${LOCAL_IMAGE}" ]; then
-    echo "File \"${LOCAL_IMAGE}\" exists"
+LOCAL_IMAGE=$ASSEMBLY_TOOL_DIR/assets/*-emmc.img
+if [ -f $LOCAL_IMAGE ]; then
+    echo "File $LOCAL_IMAGE exists"
 else
     echo "Downloading image"
     gsutil -m cp "gs://biped-install/images/latest/*-emmc.img.xz" $ASSEMBLY_TOOL_DIR/assets/
