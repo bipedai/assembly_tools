@@ -18,13 +18,5 @@ else
     LOCAL_IMAGE=$ASSEMBLY_TOOL_DIR/assets/*-emmc.img.xz
     echo "Downloaded image $LOCAL_IMAGE"
 fi
-# COMPUTED_CHECKSUM=$(md5sum "$LOCAL_IMAGE" | awk '{ print $1 }')
-# if [ "$COMPUTED_CHECKSUM" == "$EXPECTED_CHECKSUM" ]; then
-#     echo "Checksums match - Flashing. $LOCAL_IMAGE"
-    
-#     echo "Finished flashing. Please wait until the led is blinking in blue...."
-# else
-#     echo "Checksums do not match."
-# fi
 
 $FLASHER -i $LOCAL_IMAGE

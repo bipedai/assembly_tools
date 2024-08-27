@@ -3,12 +3,17 @@
 ASSEMBLY_TOOL_DIR=$(dirname "$(realpath $0)")
 echo "Setting up $ASSEMBLY_TOOL_DIR"
 
-TANGRAM_KEY_FILE="~/.tangram-key"
+TANGRAM_KEY_FILE="$HOME/.tangram-key"
 if [ -f $TANGRAM_KEY_FILE ]; then
     export TANGRAM_KEY=$(cat $TANGRAM_KEY_FILE )
 else
-    print "MISSING TANGRAM KEY"
+    printf "MISSING TANGRAM KEY"
 fi
+
+GCLOUD_JSON="$HOME/.gcp_biped_install.json"
+
+gcloud auth activate-service-account --key-file=$GCLOUD_JSON;
+
 printf "Commands:
     camera_check : Checks that the connected camera(s) work and are correctly assembled
     camera_fw_update : Update the camera firmware. Do not interrupt or disconnect the camera(s) while the update is in progress.
