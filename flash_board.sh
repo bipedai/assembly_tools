@@ -18,5 +18,5 @@ else
     LOCAL_IMAGE=$ASSEMBLY_TOOL_DIR/assets/*-emmc.img.xz
     echo "Downloaded image $LOCAL_IMAGE"
 fi
-
+echo "Flashing $LOCAL_IMAGE $(md5sum $LOCAL_IMAGE)"
 $FLASHER -i $LOCAL_IMAGE
