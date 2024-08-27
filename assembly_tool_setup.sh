@@ -19,6 +19,8 @@ printf "Commands:
     camera_fw_update : Update the camera firmware. Do not interrupt or disconnect the camera(s) while the update is in progress.
     camera_calibrate : Calibrate the camera module. See 
 
+    board_flash : Flash the board
+
     assembly_qc : Launches  the visualization for the final quality check once the full device is assembled and flashed
 
     assembly_tool_update : Update the assembly tool
@@ -30,6 +32,8 @@ printf "Commands:
 alias camera_check="source $ASSEMBLY_TOOL_DIR/camera_check.sh"
 alias camera_fw_update="python $ASSEMBLY_TOOL_DIR/fw_update.py"
 alias camera_calibrate="source $ASSEMBLY_TOOL_DIR/camera_calibrate.sh"
+
+alias board_flash="source $ASSEMBLY_TOOL_DIR/flash_board.sh"
 
 alias assembly_tool_update="cd $ASSEMBLY_TOOL_DIR && ./update.sh"
 alias assembly_tool_version="cd $ASSEMBLY_TOOL_DIR && git rev-list HEAD -1"
