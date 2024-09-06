@@ -20,6 +20,7 @@ printf "Commands:
     camera_calibrate : Calibrate the camera module. See 
 
     board_flash : Flash the board
+    board_scan : Scan the boards connected to the network
 
     assembly_qc : Launches  the visualization for the final quality check once the full device is assembled and flashed
 
@@ -34,10 +35,12 @@ alias camera_fw_update="python $ASSEMBLY_TOOL_DIR/fw_update.py"
 alias camera_calibrate="bash $ASSEMBLY_TOOL_DIR/camera_calibrate.sh"
 
 alias board_flash="bash $ASSEMBLY_TOOL_DIR/flash_board.sh"
+alias board_scan="bash $ASSEMBLY_TOOL_DIR/scan_khadas.sh"
 
 alias assembly_tool_update="cd $ASSEMBLY_TOOL_DIR && ./update.sh"
 alias assembly_tool_version="cd $ASSEMBLY_TOOL_DIR && git rev-list HEAD -1"
 
 alias assembly_tool_help="batcat $ASSEMBLY_TOOL_DIR/README.md"
+
 
 alias assembly_qc="rerun &"
