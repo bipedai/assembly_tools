@@ -28,7 +28,7 @@ metrical() {
     --volume="$CALIBRATION_FOLDER:/$CALIB_UUID" \
     --workdir="/$CALIB_UUID" \
     --net=host \
-    tangramvision/cli:latest \
+    tangramvision/cli:11.0.0 \
     --license="key/$TANGRAM_KEY" \
 	  "$@";
 }
