@@ -35,7 +35,7 @@ alias camera_fw_update="python $ASSEMBLY_TOOL_DIR/fw_update.py"
 alias camera_calibrate="bash $ASSEMBLY_TOOL_DIR/camera_calibrate.sh"
 
 alias board_flash="bash $ASSEMBLY_TOOL_DIR/flash_board.sh"
-alias board_scan="bash $ASSEMBLY_TOOL_DIR/scan_khadas.sh"
+alias board_scan="bash $ASSEMBLY_TOOL_DIR/scan_noa_on_network.sh"
 
 alias assembly_tool_update="cd $ASSEMBLY_TOOL_DIR && ./update.sh"
 alias assembly_tool_version="cd $ASSEMBLY_TOOL_DIR && git rev-list HEAD -1"
