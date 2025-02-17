@@ -15,6 +15,21 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 sudo apt-get update && sudo apt-get install google-cloud-cli -y
 ```
 
+### Always discoverable
+
+One of the tests for the final QC is to check that the NOA device has a working bluetooth antenna. For that matter, the automated test will try to discover any nearby bluetooth device.
+
+To ensure that there is at least one, we need the host computer to always be discoverable by bluetooth
+
+```
+sudo nano /etc/bluetooth/main.conf
+
+# Add / edit the line
+DiscoverableTimeout = 0
+
+# reboot the computer (only needed on first setup)
+```
+
 ## Authentification
 
 > Needs to be done only once
