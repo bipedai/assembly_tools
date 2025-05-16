@@ -10,7 +10,7 @@ CALIBRATION_FOLDER="/tmp/$CALIB_UUID"
 mkdir -p $CALIBRATION_FOLDER
 chown $(id -u):$(id -g) $CALIBRATION_FOLDER
 sudo mkdir -p /out
-chown $(id -u):$(id -g) /out
+sudo chown $(id -u):$(id -g) /out
 
 camera_tools() {
     docker run -it --rm --user="$(id -u):$(id -g)" \
