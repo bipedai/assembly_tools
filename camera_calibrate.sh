@@ -9,6 +9,7 @@ CALIBRATION_FOLDER="/tmp/$CALIB_UUID"
 # Update the permissions of the calibration folder to the current user
 mkdir -p $CALIBRATION_FOLDER
 chown $(id -u):$(id -g) $CALIBRATION_FOLDER
+mkdir -p /out
 chown $(id -u):$(id -g) /out
 
 camera_tools() {
