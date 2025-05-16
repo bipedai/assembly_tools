@@ -11,7 +11,7 @@ mkdir -p $CALIBRATION_FOLDER
 chown $(id -u):$(id -g) $CALIBRATION_FOLDER
 
 camera_tools() {
-    sudo docker run -it --rm --user="$(id -u):$(id -g)" \
+    docker run -it --rm --user="$(id -u):$(id -g)" \
         --privileged \
         -v /dev:/dev \
         -v $CALIBRATION_FOLDER:/out \
